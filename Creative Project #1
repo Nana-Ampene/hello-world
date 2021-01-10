@@ -1,0 +1,44 @@
+# Welcome to the Michigan Stadium! First of all, here's the background
+app.background = gradient('aqua', 'white', start='top')
+
+# Now here is where we'll put the audience. They'll be an important part of this project.
+# Stadium
+Oval(190, 350, 500, 250, fill='black')
+Oval(190, 375, 400, 200, fill='grey')
+
+# Audience
+Person1 = Circle(75, 340, 20, fill='lemonChiffon')
+Person2 = Circle(175, 315, 20, fill='saddleBrown')
+Person3 = Circle(290, 320, 20, fill='lemonChiffon')
+Person4 = Circle(25, 375, 20, fill='saddleBrown')
+Person5 = Circle(345, 380, 20, fill='lemonChiffon')
+Person6 = Circle(25, 375, 20, fill='saddleBrown')
+
+# Heres the screen with the score
+Rect(75, 110, 250, 200, fill='midnightBlue')
+Rect(75, 310, 50, 400, fill='lightSteelBlue')
+Rect(175, 310, 50, 400, fill='lightSteelBlue')
+Rect(275, 310, 50, 400, fill='lightSteelBlue')
+Screen = Rect(100, 135, 200, 150, fill='blue')
+M = Label('M', 200, 210, size=180, font='courier', bold=True, fill='yellow')
+Score = Label('Score =', 130, 300, size=25)
+Counter = Label(0, 200, 300, size=25)
+Yay = Label('GO BLUE!', 200, 60, size=85, visible=False)
+
+
+# Now, the team just scored a touchdown! Click on the M and this is what will happen!
+def onMousePress(mouseX, mouseY):
+    pass
+    M.fill = 'blue'
+    Screen.fill = 'yellow'
+    Counter.value +=1
+    Yay.visible =True
+    Yay.fill = gradient('blue', 'yellow')
+def onMouseRelease(mouseX, mouseY):
+    pass
+    M.fill = 'yellow'
+    Screen.fill = 'blue'
+    Counter.value +=1
+    Yay.visible =False
+    Yay.fill = gradient('blue', 'yellow')
+
